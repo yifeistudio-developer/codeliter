@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>CodeLiter — Logo concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;1,500&family=Space+Grotesk:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#18181b; --pink:#ec4899; --bg:#fafafa; --line:#e4e4e7; --muted:#71717a; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:56px 64px 120px; background:var(--bg); color:var(--ink);
+         font-family:"Public Sans",sans-serif; }
+  h1 { margin:0 0 6px; font-family:"Libre Bodoni",serif; font-weight:500; font-size:42px; letter-spacing:-.04em; }
+  .lede { margin:0 0 48px; max-width:640px; color:var(--muted); font-size:13px; line-height:1.8; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  .card { border:1px solid var(--line); background:#fff; }
+  .card-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+               padding:14px 18px; border-bottom:1px solid var(--line); }
+  .card-head strong { font-family:"Space Grotesk",sans-serif; font-size:14px; letter-spacing:-.01em; }
+  .card-head span { color:var(--muted); font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+  .stage { display:grid; grid-template-columns:1fr 1fr; }
+  .stage > div { display:grid; place-items:center; height:190px; }
+  .stage .light { background:#fafafa; }
+  .stage .dark  { background:#111114; }
+  .sizes { display:flex; align-items:center; gap:26px; padding:18px; border-top:1px solid var(--line); }
+  .sizes svg { color:var(--ink); }
+  .note { margin:0; padding:0 18px 16px; color:var(--muted); font-size:11px; line-height:1.75; }
+  .wordmarks { margin-top:64px; padding-top:42px; border-top:1px solid var(--line); display:grid; gap:34px; }
+  .wm-row { display:flex; align-items:center; gap:48px; flex-wrap:wrap; }
+  .wm { display:inline-flex; align-items:center; gap:12px; }
+  .wm svg { display:block; }
+  .wm .name { display:inline-flex; align-items:baseline; font-size:23px; letter-spacing:-.03em; }
+  .wm .name .code { font-family:"Space Grotesk",sans-serif; font-weight:600; }
+  .wm .name .liter { font-family:"Libre Bodoni",serif; font-weight:500; letter-spacing:0; }
+  .wm .name.all-sans .liter { font-family:"Space Grotesk",sans-serif; font-weight:500; letter-spacing:-.02em; }
+  .label { color:var(--muted); font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+</style>
+</head>
+<body>
+  <h1>CodeLiter — 标志方案</h1>
+  <p class="lede">Editorial code &amp; literature. 六个标记方向，统一 32×32 网格、2.4–3px 笔画、墨黑 + 单一粉色强调。每格左侧浅色、右侧深色。</p>
+
+  <div class="grid">
+    <!-- A : Bracket & Line -->
+    <div class="card">
+      <div class="card-head"><strong>A · 引文括号</strong><span>Code + Text</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M23 6H9V26H23" stroke="#18181b" stroke-width="2.8"/>
+            <path d="M14 16H21" stroke="#ec4899" stroke-width="2.8"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M23 6H9V26H23" stroke="#f4f4f5" stroke-width="2.8"/>
+            <path d="M14 16H21" stroke="#f28bbb" stroke-width="2.8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M23 6H9V26H23" stroke="currentColor" stroke-width="2.8"/><path d="M14 16H21" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M23 6H9V26H23" stroke="currentColor" stroke-width="2.8"/><path d="M14 16H21" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">代码块括号包住一行文字：技术承载书写。瑞士式直角，最贴近站点现有的方括号语言。</p>
+    </div>
+
+    <!-- A2 : Bracket & Cursor -->
+    <div class="card">
+      <div class="card-head"><strong>A2 · 光标括号</strong><span>Cursor</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M23 6H9V26H23" stroke="#18181b" stroke-width="2.8"/>
+            <path d="M14 11H17" stroke="#18181b" stroke-width="2.8"/>
+            <path d="M14 21H17" stroke="#18181b" stroke-width="2.8"/>
+            <path d="M16 12.5V19.5" stroke="#ec4899" stroke-width="2.8"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M23 6H9V26H23" stroke="#f4f4f5" stroke-width="2.8"/>
+            <path d="M14 11H17" stroke="#f4f4f5" stroke-width="2.8"/>
+            <path d="M14 21H17" stroke="#f4f4f5" stroke-width="2.8"/>
+            <path d="M16 12.5V19.5" stroke="#f28bbb" stroke-width="2.8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M23 6H9V26H23" stroke="currentColor" stroke-width="2.8"/><path d="M14 11H17" stroke="currentColor" stroke-width="2.8"/><path d="M14 21H17" stroke="currentColor" stroke-width="2.8"/><path d="M16 12.5V19.5" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M23 6H9V26H23" stroke="currentColor" stroke-width="2.8"/><path d="M14 11H17" stroke="currentColor" stroke-width="2.8"/><path d="M14 21H17" stroke="currentColor" stroke-width="2.8"/><path d="M16 12.5V19.5" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">括号内是一枚粉色光标，暗示正在书写的下一行。小尺寸下细节偏多，需要 24px 以上使用。</p>
+    </div>
+
+    <!-- B : Caret Page -->
+    <div class="card">
+      <div class="card-head"><strong>B · 终端手记</strong><span>Prompt + Page</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke="#18181b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 5h12l4 4v18H8z"/><path d="M20 5v4h4"/><path d="m12.5 14 4 3.5-4 3.5"/>
+          </svg>
+          <svg style="display:none"></svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke="#f4f4f5" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 5h12l4 4v18H8z"/><path d="M20 5v4h4"/><path d="m12.5 14 4 3.5-4 3.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h12l4 4v18H8z"/><path d="M20 5v4h4"/><path d="m12.5 14 4 3.5-4 3.5"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h12l4 4v18H8z"/><path d="M20 5v4h4"/><path d="m12.5 14 4 3.5-4 3.5"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">折角页面 + 提示符：与站点的「笔记 / 现场记录」叙事一致，但更接近通用文件图标。</p>
+    </div>
+
+    <!-- C : Angle quotes -->
+    <div class="card">
+      <div class="card-head"><strong>C · 书引号</strong><span>‹ · ›</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke="#18181b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11.5 8 5.5 16l6 8"/><path d="M20.5 8l6 8-6 8"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke="#f4f4f5" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11.5 8 5.5 16l6 8"/><path d="M20.5 8l6 8-6 8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 8 5.5 16l6 8"/><path d="M20.5 8l6 8-6 8"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 8 5.5 16l6 8"/><path d="M20.5 8l6 8-6 8"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">尖括号即书名号：代码符号与编辑引号同形。对称、易识别，但略偏通用「代码」图标。</p>
+    </div>
+
+    <!-- D : C period -->
+    <div class="card">
+      <div class="card-head"><strong>D · 版权页 C.</strong><span>Monogram</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32">
+            <path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="22.6" y="14.3" width="3.4" height="3.4" fill="#ec4899"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32">
+            <path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="#f4f4f5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="22.6" y="14.3" width="3.4" height="3.4" fill="#f28bbb"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="22.6" y="14.3" width="3.4" height="3.4" fill="#ec4899"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32"><path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="22.6" y="14.3" width="3.4" height="3.4" fill="#ec4899"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">C 加句点，像杂志版权页的署名标记。最克制、最有出版气质，粉色方块是唯一的节奏点。</p>
+    </div>
+
+    <!-- D2 : C cursor -->
+    <div class="card">
+      <div class="card-head"><strong>D2 · C 与光标</strong><span>Cl ligature</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32">
+            <path d="M22 7.5H12.5A4.5 4.5 0 0 0 8 12v8a4.5 4.5 0 0 0 4.5 4.5H22" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+            <rect x="24" y="8" width="3" height="16" fill="#ec4899"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32">
+            <path d="M22 7.5H12.5A4.5 4.5 0 0 0 8 12v8a4.5 4.5 0 0 0 4.5 4.5H22" fill="none" stroke="#f4f4f5" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/>
+            <rect x="24" y="8" width="3" height="16" fill="#f28bbb"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M22 7.5H12.5A4.5 4.5 0 0 0 8 12v8a4.5 4.5 0 0 0 4.5 4.5H22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/><rect x="24" y="8" width="3" height="16" fill="#ec4899"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32"><path d="M22 7.5H12.5A4.5 4.5 0 0 0 8 12v8a4.5 4.5 0 0 0 4.5 4.5H22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="butt" stroke-linejoin="miter"/><rect x="24" y="8" width="3" height="16" fill="#ec4899"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">C 与粉色竖线组成 Cl 缩写，竖线同时是文本光标。品牌名首尾字母都出现了，但读起来像播放条。</p>
+    </div>
+
+    <!-- E : C period baseline -->
+    <div class="card">
+      <div class="card-head"><strong>E · 基线句点</strong><span>Baseline</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32">
+            <path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="23.4" y="21.6" width="3.4" height="3.4" fill="#ec4899"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32">
+            <path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="#f4f4f5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="23.4" y="21.6" width="3.4" height="3.4" fill="#f28bbb"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="23.4" y="21.6" width="3.4" height="3.4" fill="#ec4899"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32"><path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="23.4" y="21.6" width="3.4" height="3.4" fill="#ec4899"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">句点落到基线下缘，C 的开口变成一句完整的话。重心偏下，与上一种相比更稳定。</p>
+    </div>
+
+    <!-- F : Bracket C + double line -->
+    <div class="card">
+      <div class="card-head"><strong>F · 双行引文</strong><span>Blockquote</span></div>
+      <div class="stage">
+        <div class="light">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M24 6H9V26H24" stroke="#18181b" stroke-width="2.8"/>
+            <path d="M14 12.5H22" stroke="#18181b" stroke-width="2.8"/>
+            <path d="M14 19.5H18.5" stroke="#ec4899" stroke-width="2.8"/>
+          </svg>
+        </div>
+        <div class="dark">
+          <svg width="112" height="112" viewBox="0 0 32 32" fill="none" stroke-linecap="butt" stroke-linejoin="miter">
+            <path d="M24 6H9V26H24" stroke="#f4f4f5" stroke-width="2.8"/>
+            <path d="M14 12.5H22" stroke="#f4f4f5" stroke-width="2.8"/>
+            <path d="M14 19.5H18.5" stroke="#f28bbb" stroke-width="2.8"/>
+          </svg>
+        </div>
+      </div>
+      <div class="sizes">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M24 6H9V26H24" stroke="currentColor" stroke-width="2.8"/><path d="M14 12.5H22" stroke="currentColor" stroke-width="2.8"/><path d="M14 19.5H18.5" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M24 6H9V26H24" stroke="currentColor" stroke-width="2.8"/><path d="M14 12.5H22" stroke="currentColor" stroke-width="2.8"/><path d="M14 19.5H18.5" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <span class="label">32 / 16 px</span>
+      </div>
+      <p class="note">两行引文，末行收短并转为粉色，像未写完的句子。语义最完整，但 16px 时偏密。</p>
+    </div>
+  </div>
+
+  <div class="wordmarks">
+    <span class="label">Wordmark lockups</span>
+    <div class="wm-row">
+      <div class="wm">
+        <svg width="34" height="34" viewBox="0 0 32 32"><path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="22.6" y="14.3" width="3.4" height="3.4" fill="#ec4899"/></svg>
+        <span class="name"><span class="code">Code</span><span class="liter">Liter</span></span>
+      </div>
+      <div class="wm">
+        <svg width="34" height="34" viewBox="0 0 32 32"><path d="M24 7.5H13A4.5 4.5 0 0 0 8.5 12v8a4.5 4.5 0 0 0 4.5 4.5h11" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="22.6" y="14.3" width="3.4" height="3.4" fill="#ec4899"/></svg>
+        <span class="name all-sans"><span class="code">Code</span><span class="liter">Liter</span></span>
+      </div>
+      <div class="wm">
+        <svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M23 6H9V26H23" stroke="#18181b" stroke-width="2.8"/><path d="M14 16H21" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <span class="name"><span class="code">Code</span><span class="liter">Liter</span></span>
+      </div>
+      <div class="wm">
+        <svg width="34" height="34" viewBox="0 0 32 32" fill="none" stroke-linecap="butt"><path d="M24 6H9V26H24" stroke="#18181b" stroke-width="2.8"/><path d="M14 12.5H22" stroke="#18181b" stroke-width="2.8"/><path d="M14 19.5H18.5" stroke="#ec4899" stroke-width="2.8"/></svg>
+        <span class="name"><span class="code">Code</span><span class="liter">Liter</span></span>
+      </div>
+    </div>
+    <p class="lede" style="margin:0">Lockup 顺序：D + 无衬线/衬线拆分 · D + 全无衬线 · A + 衬线拆分 · F + 衬线拆分。「Code」用 Space Grotesk，「Liter」用 Libre Bodoni —— 名字本身即代码与文学的并置。</p>
+  </div>
+</body>
+</html>
