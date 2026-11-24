@@ -27,6 +27,18 @@ type SearchItem = { title: string; summary: string; type: string; kind: "note" |
 
 const NavigationContext = createContext<((path: string) => void) | null>(null);
 const LocaleContext = createContext<Language>("zh");
+const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+function withBasePath(path: string) {
+  if (!BASE_PATH || !path.startsWith("/") || path.startsWith("//")) return path;
+  return `${BASE_PATH}${path === "/" ? "/" : path}`;
+}
+
+function getAppPathname(pathname: string) {
+  if (!BASE_PATH) return pathname;
+  if (pathname === BASE_PATH) return "/";
+  return pathname.startsWith(`${BASE_PATH}/`) ? pathname.slice(BASE_PATH.length) : pathname;
+}
 
 function useLocale() {
   return useContext(LocaleContext);
@@ -61,7 +73,7 @@ function Link({
   const navigate = useNavigate();
   return (
     <a
-      href={href}
+      href={withBasePath(href)}
       className={className}
       aria-label={ariaLabel}
       aria-current={ariaCurrent ? "page" : undefined}
@@ -796,7 +808,7 @@ function NotFound() {
 }
 
 export default function App() {
-  const [pathname, setPathname] = useState(window.location.pathname);
+  const [pathname, setPathname] = useState(() => getAppPathname(window.location.pathname));
   const [searchOpen, setSearchOpen] = useState(false);
   const [language, setLanguage] = useState<Language>(() =>
     window.localStorage.getItem("codeliter-language") === "en" ? "en" : "zh",
@@ -811,16 +823,16 @@ export default function App() {
   const resolvedTheme = theme === "system" ? systemTheme : theme;
   const route = parseRoute(pathname);
   const navigate = (path: string) => {
-    const url = new URL(path, window.location.origin);
+    const url = new URL(withBasePath(path), window.location.origin);
     window.history.pushState({}, "", `${url.pathname}${url.search}${url.hash}`);
-    setPathname(url.pathname);
+    setPathname(getAppPathname(url.pathname));
     setSearchOpen(false);
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reducedMotion ? "auto" : "smooth" });
   };
 
   useEffect(() => {
-    const handlePopState = () => setPathname(window.location.pathname);
+    const handlePopState = () => setPathname(getAppPathname(window.location.pathname));
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
