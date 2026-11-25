@@ -4,7 +4,7 @@
 
 ## 本地运行
 
-要求 Node.js 22 或更高版本及可连接的 MongoDB 实例。
+要求 Node.js 26.13.1 或更高版本及可连接的 MongoDB 实例。
 
 ```bash
 npm install
